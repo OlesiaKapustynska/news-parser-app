@@ -2,6 +2,7 @@
 
 This project is a news parsing application that uses JavaFX for displaying news and Spring Boot for backend operations. News is parsed from a website, stored in a MySQL database, and displayed through a graphical interface.
 
+![Application Screenshot](./images/2024-08-07 17.50.35.png)
 ## Requirements
 
 - JDK 17 or later
