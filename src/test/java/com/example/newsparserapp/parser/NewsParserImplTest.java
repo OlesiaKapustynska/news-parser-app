@@ -33,7 +33,6 @@ class NewsParserImplTest {
 
     @Test
     void testParseNews() throws IOException {
-        // Підготовка тестових даних
         String html = "<html><body>" +
                 "<div class='row-result-body-text'>" +
                 "<div class='info'>Headline</div>" +

@@ -9,4 +9,5 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface NewsRepository extends JpaRepository<News, Long> {
     List<News> findByPublicationTimeBetween(Timestamp start, Timestamp end);
+    News findByHeadlineAndPublicationTime(String headline, Timestamp publicationTime);
 }
