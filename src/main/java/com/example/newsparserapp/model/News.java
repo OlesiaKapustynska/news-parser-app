@@ -15,6 +15,7 @@ public class News {
     private String headline;
     private String description;
     private Timestamp publicationTime;
+    private String timeOfDay;
 
     public Long getId() {
         return id;
@@ -46,5 +47,24 @@ public class News {
 
     public void setPublicationTime(Timestamp publicationTime) {
         this.publicationTime = publicationTime;
+        this.timeOfDay = determineTimeOfDay(publicationTime);
+    }
+
+    public String getTimeOfDay() {
+        return timeOfDay;
+    }
+
+    private String determineTimeOfDay(Timestamp publicationTime) {
+        if (publicationTime == null) {
+            return "unknown";
+        }
+        int hour = publicationTime.toLocalDateTime().getHour();
+        if (hour >= 0 && hour < 12) {
+            return "morning";
+        } else if (hour >= 12 && hour < 18) {
+            return "day";
+        } else {
+            return "evening";
+        }
     }
 }
